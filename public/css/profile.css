@@ -77,19 +77,19 @@
 }
 
 @media (max-width: 768px) {
-    .profile-container {
+    .kontainer-profil {
         padding: 1.5rem;
     }
 
-    .profile-title {
+    .judul-profil {
         font-size: 2rem;
     }
 
-    .profile-subtitle {
+    .penjelasan {
         font-size: 1rem;
     }
 
-    .profile-details {
+    .detail-profil {
         grid-template-columns: 1fr;
     }
 }
