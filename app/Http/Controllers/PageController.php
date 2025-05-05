@@ -21,7 +21,6 @@ class PageController extends Controller
 
     public function login()
     {
-        // Jika sudah login, redirect ke dashboard
         if (Session::get('authenticated')) {
             return redirect()->route('dashboard');
         }
@@ -30,14 +29,12 @@ class PageController extends Controller
 
     public function dashboard()
     {
-        // Cek session login
         if (!Session::get('authenticated')) {
             return redirect()->route('login')->with('error', 'Please login first');
         }
         return view('dashboard');
     }
 
-    // Proses login
     public function authenticate(Request $request)
     {
         $credentials = self::$validCredentials;
@@ -59,7 +56,6 @@ class PageController extends Controller
         ])->onlyInput('email');
     }
 
-    // Proses logout
     public function logout(Request $request)
     {
         $request->session()->flush();
